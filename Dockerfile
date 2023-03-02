@@ -1,9 +1,8 @@
-# syntax=docker/dockerfile:1
-FROM node:18-alpine
+FROM node:19.7.0-slim
 WORKDIR /app
-COPY package.json yarn.lock ./
-RUN yarn install --production
+COPY package* .
+RUN npm install --production
 COPY . .
-CMD ["node", "src/index.js"]
-EXPOSE 3000
-
+ENV NODE_ENV="testing" PORT="5000"
+EXPOSE 5000
+CMD ["npm","start"]
