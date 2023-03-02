@@ -24,7 +24,7 @@ CMD ["npm","start"]
 Make sure the port exposed in Dockerfile is same as the port node.js server is listening to.
 Build the image by running docker build -t node-app .
 After the image is built, it can be listed by running docker images
-Finally, we can create a container using the image created above by running docker run -dp 3000:3000 node-app This will run the container in a detached mode, list all the containers using docker ps
+Finally, we can create a container using the image created above by running docker run -dp 3000:5000 node-app This will run the container in a detached mode, list all the containers using docker ps
 You've successfully dockerized your node.js server.
 Currently your docker image is in your local machine, but what if you need to create your container on another machine ? We have a solution to this via pushing our image on container registeries such as DockerHub or ECR. Let's push our image on DockerHub for now
 After creating an account and successfully logging in, create a new repository node-server. Your repository name will be [Username]/node-server
